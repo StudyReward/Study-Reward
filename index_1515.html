@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyReward — Learn. Earn. Get rewarded.</title>
+<style>
+:root{
+  --blue:#FDE8EF; --blue2:#F5A0B5; --navy:#8E2342; --pink:#F5A0B5;
+  --green:#FCEEF2; --cream:#FFFFFF; --white:#FFFFFF; --muted:#8A5968;
+  --berry:#C92750; --yellow:#FFC34D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#8E2342;background:#FFFFFF;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(23,50,77,.08)}
+.navin{max-width:1120px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand-logo{display:block;width:190px;height:auto;max-height:66px;object-fit:contain}.logo{font-weight:800;font-size:20px;letter-spacing:-.5px}.logo span{color:#C92750}
+.links{display:flex;gap:26px;align-items:center}.links a{text-decoration:none;color:#8E2342;font-size:14px;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:999px;padding:13px 21px;font-weight:750;cursor:pointer}
+.primary{background:#C92750;color:white;box-shadow:0 8px 22px rgba(201,39,80,.15)}
+.secondary{background:white;color:#C92750;border:1px solid rgba(201,39,80,.25)}
+.hero{padding:150px 24px 90px;background:#FFFFFF}
+.hero-grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.badge{display:inline-block;background:white;border:1px solid rgba(23,50,77,.09);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:750;margin-bottom:20px}
+h1{font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-4px;max-width:720px;color:#111111}
+h1 em{font-style:normal;color:#C92750}
+.hero p{font-size:18px;color:var(--muted);max-width:590px;margin:25px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.mock{background:white;border-radius:30px;padding:22px;box-shadow:0 25px 70px rgba(23,50,77,.14);transform:rotate(2deg)}
+.mocktop{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:18px}
+.points{background:#FDE8EF;border-radius:22px;padding:22px;margin-bottom:14px}.points small{display:block;color:#58728a}.points strong{font-size:38px}
+.bar{height:9px;background:#edf1f5;border-radius:20px;overflow:hidden;margin-top:12px}.bar i{display:block;width:72%;height:100%;background:#C92750;border-radius:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mini{padding:18px;border-radius:18px}.mini:nth-child(1){background:var(--green)}.mini:nth-child(2){background:var(--pink)}.mini:nth-child(3){background:#FFF0CC}
+section{padding:95px 24px}.wrap{max-width:1120px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:#6B8499;margin-bottom:10px}
+h2{font-size:clamp(34px,5vw,54px);letter-spacing:-2px;line-height:1.05;margin-bottom:16px}.lead{color:var(--muted);max-width:650px;font-size:17px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}.step{background:white;border:1px solid rgba(23,50,77,.07);border-radius:24px;padding:28px;box-shadow:0 12px 35px rgba(23,50,77,.05)}.icon{font-size:30px;margin-bottom:28px}.num{font-size:12px;color:#7b8c9b;font-weight:800}.step h3{font-size:22px;margin:6px 0}
+.personal{background:#FFFFFF}.personal-grid,.business-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.featurebox{background:white;border-radius:28px;padding:28px;box-shadow:0 18px 45px rgba(23,50,77,.08)}
+.feature{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid #edf1f4}.feature:last-child{border:0}.feature b{display:block}.feature span{color:var(--muted);font-size:14px}
+.rewardgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}.reward{border-radius:24px;padding:28px;min-height:190px}.reward:nth-child(1){background:var(--pink)}.reward:nth-child(2){background:#FCEEF2}.reward:nth-child(3){background:#FFF5F7}
+.business{background:#FFF5F7;color:#8E2342}.business .lead{color:#8A5968}.business .eyebrow{color:#C92750}.businessbox{background:#FFFFFF;border:1px solid #F5D1DC;border-radius:28px;padding:32px}.businessbox p{color:#8A5968!important}
+.cta{background:#FFFFFF;text-align:center;border-top:1px solid #FCEEF2}.cta .lead{margin:0 auto 28px}
+footer{padding:30px 24px;background:#FFFFFF;color:#8A5968;border-top:1px solid #FCEEF2}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:20px;font-size:13px}
+@media(max-width:800px){.links{display:none}.hero-grid,.personal-grid,.business-grid{grid-template-columns:1fr}.hero{padding-top:120px}.mock{transform:none}.steps,.rewardgrid{grid-template-columns:1fr}h1{letter-spacing:-2.5px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav><div class="navin"><a href="#top" aria-label="StudyReward startsida"><img class="brand-logo" src="logo-studyreward.jpeg" alt="StudyReward logotyp"></a><div class="links"><a href="#how">Så fungerar det</a><a href="#personal">Personligt lärande</a><a href="#business">För företag</a><a class="btn primary" href="#join">Kommer snart</a></div></div></nav>
+
+<header class="hero" id="top">
+<div class="hero-grid">
+<div>
+<div class="badge">🎓 Ett nytt sätt att motivera till lärande</div>
+<h1>Plugga.<br><em>Samla poäng.</em><br>Få belöningar.</h1>
+<p>StudyReward kombinerar lärande och motivation. Få poäng för tiden och arbetet du lägger på dina studier — och använd dem till riktiga belöningar.</p>
+<div class="actions"><a class="btn primary" href="#how">Upptäck StudyReward →</a><a class="btn secondary" href="#join">Coming soon</a></div>
+</div>
+<div class="mock">
+<div class="mocktop"><span>StudyReward</span><span>✨</span></div>
+<div class="points"><small>Dina poäng</small><strong>1 240</strong><div class="bar"><i></i></div></div>
+<div class="cards"><div class="mini">📚<br><b>Studera</b></div><div class="mini">⭐<br><b>Samla</b></div><div class="mini">🎁<br><b>Belöna</b></div></div>
+</div>
+</div>
+</header>
+
+<section id="how"><div class="wrap"><div class="eyebrow">Så fungerar det</div><h2>Din studietid<br>blir något mer.</h2><p class="lead">StudyReward gör det enklare att hålla motivationen uppe genom att koppla dina studieinsatser till konkreta belöningar.</p>
+<div class="steps">
+<div class="step"><div class="icon">📖</div><span class="num">01 — STUDY</span><h3>Studera</h3><p>Fokusera på dina ämnen och lägg tid på det som hjälper dig framåt.</p></div>
+<div class="step"><div class="icon">⭐</div><span class="num">02 — EARN</span><h3>Samla poäng</h3><p>Du får poäng för den tid och det arbete du lägger på dina studier.</p></div>
+<div class="step"><div class="icon">🎁</div><span class="num">03 — REWARD</span><h3>Få belöningar</h3><p>Använd dina poäng till rabatter, erbjudanden och andra belöningar.</p></div>
+</div></div></section>
+
+<section class="personal" id="personal"><div class="wrap personal-grid"><div><div class="eyebrow">Personligt lärande</div><h2>Anpassat efter<br>just dig.</h2><p class="lead">StudyReward anpassas efter elevens årskurs och ämnen. Du kan även ladda upp egna PDF:er och skolmaterial för ett mer personligt lärande.</p></div>
+<div class="featurebox">
+<div class="feature"><div>🎓</div><div><b>Din årskurs</b><span>Innehåll anpassat efter din nivå.</span></div></div>
+<div class="feature"><div>📚</div><div><b>Dina ämnen</b><span>Fokusera på det du faktiskt studerar.</span></div></div>
+<div class="feature"><div>📄</div><div><b>Ditt material</b><span>Ladda upp PDF:er och eget skolmaterial.</span></div></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="eyebrow">Belöningar</div><h2>Studera idag.<br>Belöna dig senare.</h2><p class="lead">Poängen kan användas hos samarbetande företag för att låsa upp förmåner och erbjudanden.</p>
+<div class="rewardgrid"><div class="reward"><div class="icon">🏷️</div><h3>Rabatter</h3><p>Få tillgång till studentvänliga rabatter.</p></div><div class="reward"><div class="icon">✨</div><h3>Erbjudanden</h3><p>Upptäck exklusiva erbjudanden från partners.</p></div><div class="reward"><div class="icon">🎁</div><h3>Andra belöningar</h3><p>Samla poäng och välj det som passar dig.</p></div></div></div></section>
+
+<section class="business" id="business"><div class="wrap business-grid"><div><div class="eyebrow">För företag</div><h2>Reach students.<br>Support learning.</h2><p class="lead">För företag skapar StudyReward en möjlighet att nå en ung målgrupp samtidigt som ni blir en del av ett koncept som uppmuntrar elever att utveckla sina kunskaper.</p></div><div class="businessbox"><h3>En win-win.</h3><p style="color:#8A5968;margin-top:10px">Ni når relevanta kunder. Elever får motivation att fortsätta lära sig. Tillsammans skapar vi ett positivt ekosystem kring utbildning.</p></div></div></section>
+
+<section class="cta" id="join"><div class="wrap"><div class="eyebrow">StudyReward</div><h2>Something rewarding<br>is coming.</h2><p class="lead">Study smarter. Stay motivated. Get rewarded.</p><a class="btn primary" href="mailto:studyreward@outlook.com">Kontakta oss</a></div></section>
+<footer><div class="foot"><img class="brand-logo" src="logo-studyreward.jpeg" alt="StudyReward logotyp" style="width:145px"><span>© 2026 StudyReward</span><span>Learn · Earn · Get rewarded</span></div></footer>
+</body>
+</html>
